@@ -1,0 +1,117 @@
+{
+    "promotions": [
+        {
+            "id": "promo1",
+            "title": "Weekend Special",
+            "shortCopy": "Get 20% off on weekend rentals",
+            "validity": "2024-12-31"
+        },
+        {
+            "id": "promo2",
+            "title": "First Ride Free",
+            "shortCopy": "New users get first 2 hours free",
+            "validity": "2024-11-30"
+        }
+    ],
+    "rentalPackages": [
+        {
+            "id": "basic",
+            "plan": "Basic Plan",
+            "pricePerDay": 25000,
+            "pricePerWeek": 150000,
+            "pricePerMonth": 500000,
+            "terms": "Insurance included, 50km daily limit"
+        },
+        {
+            "id": "premium",
+            "plan": "Premium Plan",
+            "pricePerDay": 45000,
+            "pricePerWeek": 280000,
+            "pricePerMonth": 900000,
+            "terms": "Full insurance, unlimited km, 24/7 support"
+        }
+    ],
+    "electrumBikes": [
+        {
+            "id": "bike1",
+            "model": "Electrum E-City",
+            "photo": "assets/img/moto1.png",
+            "range": "80 km",
+            "availability": true,
+            "batteryCapacity": "48V 12Ah",
+            "maxSpeed": "25 km/h",
+            "chargingTime": "4-6 hours",
+            "weight": "22 kg",
+            "features": [
+                "LED Display",
+                "USB Charging",
+                "Anti-theft Lock"
+            ]
+        },
+        {
+            "id": "bike2",
+            "model": "Electrum E-Sport",
+            "photo": "assets/img/moto2.jpg",
+            "range": "120 km",
+            "availability": true,
+            "batteryCapacity": "48V 20Ah",
+            "maxSpeed": "45 km/h",
+            "chargingTime": "6-8 hours",
+            "weight": "28 kg",
+            "features": [
+                "Digital Dashboard",
+                "GPS Tracking",
+                "Fast Charging"
+            ]
+        },
+        {
+            "id": "bike3",
+            "model": "Electrum E-Cargo",
+            "photo": "assets/img/moto3.jpg",
+            "range": "60 km",
+            "availability": false,
+            "batteryCapacity": "48V 15Ah",
+            "maxSpeed": "25 km/h",
+            "chargingTime": "5-7 hours",
+            "weight": "35 kg",
+            "features": [
+                "Large Cargo Box",
+                "Hydraulic Brakes",
+                "Reinforced Frame"
+            ]
+        },
+        {
+            "id": "bike4",
+            "model": "Electrum E-Fold",
+            "photo": "assets/img/moto4.jpg",
+            "range": "50 km",
+            "availability": true,
+            "batteryCapacity": "36V 10Ah",
+            "maxSpeed": "20 km/h",
+            "chargingTime": "3-4 hours",
+            "weight": "18 kg",
+            "features": [
+                "Foldable Design",
+                "Compact Storage",
+                "Lightweight"
+            ]
+        }
+    ],
+    "pickupAreas": [
+        {
+            "id": "area1",
+            "name": "Jakarta Pusat",
+            "address": "Jl. Thamrin No. 1"
+        },
+        {
+            "id": "area2",
+            "name": "Jakarta Selatan",
+            "address": "Jl. Sudirman No. 25"
+        },
+        {
+            "id": "area3",
+            "name": "Jakarta Utara",
+            "address": "Jl. Ancol Barat No. 10"
+        }
+    ]
+}

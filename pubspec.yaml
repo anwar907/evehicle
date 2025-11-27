@@ -12,6 +12,19 @@ dependencies:
   flutter_bloc: ^9.1.1
   equatable: ^2.0.7
   animated_bottom_navigation_bar: ^1.4.0
+  carousel_slider: ^5.1.1
+  auth_repository:
+    path: ./packages/auth_repository
+  remote_repository:
+    path: ./packages/network/remote_repository
+  local_repository:
+    path: ./packages/network/local_repository
+  vehicle_repository:
+    path: ./packages/vehicle_repository
+  promotions_repository:
+    path: ./packages/promotions_repository
+  rental_package_repository:
+    path: ./packages/rental_package_repository
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +33,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/img/moto1.png
+    - assets/img/moto2.jpg
+    - assets/img/moto3.jpg
+    - assets/img/moto4.jpg

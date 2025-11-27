@@ -6,21 +6,32 @@ import 'package:evehicle/app/modules/navigation/view/navigation_view.dart';
 import 'package:evehicle/app/modules/navigation/viewmodel/cubit/navigation_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:local_repository/local_repository.dart';
+import 'package:remote_repository/remote_repository.dart';
 
 final GlobalKey<NavigatorState> navigatorKey =
     GlobalKey<NavigatorState>(); // GlobalKey untuk Navigator
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({
+    required RemoteDataRepository remoteDataRepository,
+    required LocalDataRepository localDataRepository,
+    super.key,
+  }) : _remoteDataRepository = remoteDataRepository,
+       _localDataRepository = localDataRepository;
+
+  final RemoteDataRepository _remoteDataRepository;
+  final LocalDataRepository _localDataRepository;
 
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider(
-          create: (context) {
-            return null;
-          },
+        RepositoryProvider<RemoteDataRepository>(
+          create: (_) => _remoteDataRepository,
+        ),
+        RepositoryProvider<LocalDataRepository>(
+          create: (_) => _localDataRepository,
         ),
       ],
       child: MultiBlocProvider(

@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "evehicle (debug mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_0oIsjQpxCgiUTf4QagUNkw_Lej-DeMv",
+        "--dart-define=URL=https://omdjtwwqikuvzuwyuysp.supabase.co"
+      ]
+    },
+    {
+      "name": "evehicle (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_0oIsjQpxCgiUTf4QagUNkw_Lej-DeMv",
+        "--dart-define=URL=https://omdjtwwqikuvzuwyuysp.supabase.co"
+      ]
+    }
+  ]
+}
