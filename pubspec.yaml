@@ -14,6 +14,8 @@ dependencies:
   animated_bottom_navigation_bar: ^1.4.0
   carousel_slider: ^5.1.1
   shared_preferences: ^2.5.3
+  flutter_map: ^8.2.2
+  latlong2: ^0.9.1
   auth_repository:
     path: ./packages/auth_repository
   remote_repository:
@@ -39,3 +41,4 @@ flutter:
     - assets/img/moto2.jpg
     - assets/img/moto3.jpg
     - assets/img/moto4.jpg
+    - assets/data/

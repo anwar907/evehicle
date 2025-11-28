@@ -1,7 +1,7 @@
 name: promotions_repository
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+publish_to: none
 
 environment:
   sdk: ^3.10.1
@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  local_repository:
+    path: ../network/local_repository
 
 dev_dependencies:
   flutter_test:

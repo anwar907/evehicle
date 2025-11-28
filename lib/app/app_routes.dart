@@ -1,6 +1,5 @@
 import 'package:evehicle/app/modules/home/home_page.dart';
 import 'package:evehicle/app/modules/login/login_page.dart';
-import 'package:evehicle/app/modules/profile/profile_page.dart';
 import 'package:evehicle/app/modules/register/register_page.dart';
 import 'package:evehicle/app/modules/splash/view/splash_view.dart';
 import 'package:flutter/widgets.dart';
@@ -20,7 +19,6 @@ class AppRoutes {
       register: (context) => RegisterPage(),
       home: (context) => HomePage(),
       location: (context) => LoginPage(),
-      profile: (context) => ProfilePage(),
     };
   }
 }

@@ -1,22 +1,31 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:evehicle/app/helpers/shared_preference.dart';
+import 'package:evehicle/app/utils/extension.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
-  SplashCubit() : super(SplashState(isLogin: false));
+  SplashCubit() : super(SplashState(isLogin: false, currentPage: 0));
 
   Future<void> checkLogin() async {
     // Simulasi loading splash screen
-    await Future.delayed(const Duration(seconds: 2));
+    try {
+      emit(state.copyWith(status: StatusState.loading));
+      await Future.delayed(const Duration(seconds: 3));
+      final token = await PreferenceHelper.instance.getString('token');
 
-    SharedPreferences.getInstance().then((prefs) {
-      final token = prefs.getString('token');
       if (token != null) {
-        emit(state.copyWith(isLogin: true));
+        emit(state.copyWith(isLogin: true, status: StatusState.success));
+      } else {
+        emit(state.copyWith(isLogin: false, status: StatusState.success));
       }
-    });
-    emit(state.copyWith(isLogin: false));
+    } catch (e) {
+      emit(state.copyWith(status: StatusState.failure));
+    }
+  }
+
+  void changePage(int page) {
+    emit(state.copyWith(currentPage: page));
   }
 }

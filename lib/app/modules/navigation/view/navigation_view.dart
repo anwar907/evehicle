@@ -3,7 +3,6 @@ import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/modules/home/home_page.dart';
 import 'package:evehicle/app/modules/location/location_page.dart';
 import 'package:evehicle/app/modules/navigation/viewmodel/cubit/navigation_cubit.dart';
-import 'package:evehicle/app/modules/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,11 +10,7 @@ class NavigationView extends StatelessWidget {
   static const routeName = AppRoutes.home;
   const NavigationView({super.key});
 
-  final List<Widget> screens = const [
-    HomePage(),
-    LocationPage(),
-    ProfilePage(),
-  ];
+  final List<Widget> screens = const [HomePage(), LocationPage()];
 
   @override
   Widget build(BuildContext context) {

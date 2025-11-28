@@ -10,7 +10,7 @@ class AuthRepository {
       final token = await _remoteDataRepository.login(email, password);
 
       return token.session?.accessToken ?? '';
-    } catch (e) {
+    } on Exception catch (e) {
       throw Exception(e);
     }
   }

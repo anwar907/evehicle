@@ -1,8 +1,8 @@
 import 'package:auth_repository/auth_repository.dart';
 import 'package:equatable/equatable.dart';
+import 'package:evehicle/app/helpers/shared_preference.dart';
 import 'package:evehicle/app/utils/extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
@@ -27,9 +27,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       if (user.isEmpty) {
         throw Exception('Login failed');
       }
-      SharedPreferences.getInstance().then((prefs) {
-        prefs.setString('token', user);
-      });
+      PreferenceHelper.instance.setString('token', user);
+
       emit(state.copyWith(status: StatusState.success));
     } catch (e) {
       emit(state.copyWith(status: StatusState.failure));

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:local_repository/local_repository.dart';
-import 'package:local_repository/src/models/data_vehicle_model.dart';
 
 class LocalRepositoryImpl implements LocalDataRepository {
   @override
@@ -13,7 +12,7 @@ class LocalRepositoryImpl implements LocalDataRepository {
       );
       final jsonData = json.decode(jsonString);
       return DataVehicle.fromJson(jsonData);
-    } catch (e) {
+    } on Exception catch (e) {
       throw Exception(e);
     }
   }
