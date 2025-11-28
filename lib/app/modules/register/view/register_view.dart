@@ -1,4 +1,3 @@
-import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/helpers/navigation.dart';
 import 'package:evehicle/app/modules/login/login_page.dart';
 import 'package:evehicle/app/modules/register/viewmodel/register_bloc.dart';
@@ -6,6 +5,7 @@ import 'package:evehicle/app/themes/solid_colors.dart';
 import 'package:evehicle/app/utils/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:remote_repository/remote_repository.dart';
 
 class RegisterView extends StatelessWidget {
   RegisterView({super.key});
@@ -94,13 +94,14 @@ class RegisterView extends StatelessWidget {
               BlocListener<RegisterBloc, RegisterState>(
                 listener: (context, state) {
                   if (state.status.isLoading) {
-                    context.showSnackBar('Loading...');
+                    context.showLoadingDialog();
                   }
                   if (state.status.isSuccess) {
-                    Navigator.pushNamed(context, AppRoutes.login);
+                    NavigatorHelper.pushRemoveUntil(context, LoginPage());
                   }
                   if (state.status.isFailure) {
-                    context.showSnackBar('Register Failed');
+                    context.dismissDialog();
+                    context.showErrorDialog('Register Failed');
                   }
                 },
                 child: Center(
@@ -116,9 +117,14 @@ class RegisterView extends StatelessWidget {
                           ),
                           onPressed: () {
                             if (!isValid) return;
-                            NavigatorHelper.pushRemoveUntil(
-                              context,
-                              LoginPage(),
+                            context.read<RegisterBloc>().add(
+                              RegisterWithEmailEvent(
+                                user: RegisterDto(
+                                  email: _emailController.text,
+                                  name: _nameController.text,
+                                  password: _passwordController.text,
+                                ),
+                              ),
                             );
                           },
                           child: Text(

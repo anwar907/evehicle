@@ -77,16 +77,16 @@ class LoginView extends StatelessWidget {
                       previous.status != current.status,
                   listener: (context, state) {
                     if (state.status.isLoading) {
-                      context.showSnackBar('Loading...');
+                      context.showLoadingDialog();
                     }
 
                     if (state.status.isSuccess) {
-                      context.showSnackBar('Login Success');
+                      context.showLoadingDialog();
                       Navigator.pushNamed(context, AppRoutes.home);
                     }
 
                     if (state.status.isFailure) {
-                      context.showSnackBar('Login Failed');
+                      context.showLoadingDialog();
                     }
                   },
                   child: ValueListenableBuilder(

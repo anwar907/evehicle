@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:auth_repository/auth_repository.dart';
 import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/helpers/navigation.dart';
 import 'package:evehicle/app/modules/login/viewmodel/login_bloc.dart';
@@ -17,12 +18,15 @@ class MainApp extends StatelessWidget {
   const MainApp({
     required RemoteDataRepository remoteDataRepository,
     required LocalDataRepository localDataRepository,
+    required AuthRepository authRepository,
     super.key,
   }) : _remoteDataRepository = remoteDataRepository,
+       _authRepository = authRepository,
        _localDataRepository = localDataRepository;
 
   final RemoteDataRepository _remoteDataRepository;
   final LocalDataRepository _localDataRepository;
+  final AuthRepository _authRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +38,7 @@ class MainApp extends StatelessWidget {
         RepositoryProvider<LocalDataRepository>(
           create: (_) => _localDataRepository,
         ),
+        RepositoryProvider<AuthRepository>(create: (_) => _authRepository),
       ],
       child: MultiBlocProvider(
         providers: [

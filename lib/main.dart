@@ -1,3 +1,4 @@
+import 'package:auth_repository/auth_repository.dart';
 import 'package:evehicle/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:local_repository/local_repository.dart';
@@ -8,8 +9,13 @@ Future<void> main() async {
 
   final supabase = await SupabaseRepositoryFactory.create();
   final localRepo = LocalRepositoryImpl();
+  final authRepository = AuthRepository(remoteDataRepository: supabase);
 
   runApp(
-    MainApp(remoteDataRepository: supabase, localDataRepository: localRepo),
+    MainApp(
+      remoteDataRepository: supabase,
+      localDataRepository: localRepo,
+      authRepository: authRepository,
+    ),
   );
 }

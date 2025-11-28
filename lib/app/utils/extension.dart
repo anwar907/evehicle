@@ -1,3 +1,4 @@
+import 'package:evehicle/app/themes/loading_dialog.dart';
 import 'package:flutter/material.dart';
 
 enum StatusState { initial, loading, success, failure }
@@ -10,8 +11,37 @@ extension StatusStateExtension on StatusState {
 }
 
 extension BuildContextExtension on BuildContext {
-  void showSnackBar(String message) {
-    final snackBar = SnackBar(content: Text(message));
-    ScaffoldMessenger.of(this).showSnackBar(snackBar);
+  void showLoadingDialog() {
+    showDialog(
+      context: this,
+      barrierDismissible: false,
+      builder: (context) => LoadingDialog(),
+    );
+  }
+
+  void showErrorDialog(String message) {
+    ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            const Icon(Icons.error_outline, color: Colors.white),
+            const SizedBox(width: 12),
+            Expanded(child: Text(message)),
+          ],
+        ),
+        backgroundColor: Colors.red.shade700,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        action: SnackBarAction(
+          label: 'Close',
+          textColor: Colors.white,
+          onPressed: () => ScaffoldMessenger.of(this).hideCurrentSnackBar(),
+        ),
+      ),
+    );
+  }
+
+  void dismissDialog() {
+    Navigator.pop(this);
   }
 }

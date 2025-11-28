@@ -1,3 +1,4 @@
+import 'package:auth_repository/auth_repository.dart';
 import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/modules/register/view/register_view.dart';
 import 'package:evehicle/app/modules/register/viewmodel/register_bloc.dart';
@@ -11,7 +12,8 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RegisterBloc(),
+      create: (context) =>
+          RegisterBloc(authRepository: context.read<AuthRepository>()),
       child: RegisterView(),
     );
   }

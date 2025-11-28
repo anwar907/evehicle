@@ -8,3 +8,11 @@ sealed class RegisterEvent extends Equatable {
 }
 
 class SecurePasswordEvent extends RegisterEvent {}
+
+class RegisterWithEmailEvent extends RegisterEvent {
+  final RegisterDto user;
+
+  const RegisterWithEmailEvent({
+    required this.user,
+  });
+}
