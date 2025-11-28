@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:auth_repository/auth_repository.dart';
 import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/helpers/navigation.dart';
-import 'package:evehicle/app/modules/login/viewmodel/login_bloc.dart';
 import 'package:evehicle/app/modules/navigation/view/navigation_view.dart';
 import 'package:evehicle/app/modules/navigation/viewmodel/cubit/navigation_cubit.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +42,6 @@ class MainApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<NavigationCubit>(create: (_) => NavigationCubit()),
-          BlocProvider<LoginBloc>(create: (_) => LoginBloc()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

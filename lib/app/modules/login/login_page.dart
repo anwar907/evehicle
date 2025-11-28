@@ -1,3 +1,4 @@
+import 'package:auth_repository/auth_repository.dart';
 import 'package:evehicle/app/app_routes.dart';
 import 'package:evehicle/app/modules/login/viewmodel/login_bloc.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LoginBloc>(
-      create: (context) => LoginBloc(),
+      create: (context) => LoginBloc(authRepository: context.read<AuthRepository>()),
       child: LoginView(),
     );
   }

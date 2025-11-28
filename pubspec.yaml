@@ -13,6 +13,7 @@ dependencies:
   equatable: ^2.0.7
   animated_bottom_navigation_bar: ^1.4.0
   carousel_slider: ^5.1.1
+  shared_preferences: ^2.5.3
   auth_repository:
     path: ./packages/auth_repository
   remote_repository:

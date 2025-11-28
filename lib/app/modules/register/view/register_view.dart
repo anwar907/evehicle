@@ -92,6 +92,8 @@ class RegisterView extends StatelessWidget {
               ),
 
               BlocListener<RegisterBloc, RegisterState>(
+                listenWhen: (previous, current) =>
+                    previous.status != current.status,
                 listener: (context, state) {
                   if (state.status.isLoading) {
                     context.showLoadingDialog();

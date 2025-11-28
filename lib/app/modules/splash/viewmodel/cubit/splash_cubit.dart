@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'splash_state.dart';
 
@@ -10,9 +11,12 @@ class SplashCubit extends Cubit<SplashState> {
     // Simulasi loading splash screen
     await Future.delayed(const Duration(seconds: 2));
 
-    // Simulasi pengecekan login (ganti dengan logic sesungguhnya)
-    // bool isLoggedIn = false; // Ganti dengan pengecekan token/session
-
+    SharedPreferences.getInstance().then((prefs) {
+      final token = prefs.getString('token');
+      if (token != null) {
+        emit(state.copyWith(isLogin: true));
+      }
+    });
     emit(state.copyWith(isLogin: false));
   }
 }

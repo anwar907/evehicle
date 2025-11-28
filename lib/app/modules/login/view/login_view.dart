@@ -86,7 +86,8 @@ class LoginView extends StatelessWidget {
                     }
 
                     if (state.status.isFailure) {
-                      context.showLoadingDialog();
+                      context.dismissDialog();
+                      context.showErrorDialog('Login failed');
                     }
                   },
                   child: ValueListenableBuilder(
@@ -101,7 +102,12 @@ class LoginView extends StatelessWidget {
                           ),
                           onPressed: () {
                             if (!isValid) return;
-                            Navigator.pushNamed(context, AppRoutes.home);
+                            context.read<LoginBloc>().add(
+                              LoginUserEvent(
+                                email: _emailController.text,
+                                password: _passwordController.text,
+                              ),
+                            );
                           },
                           child: Text(
                             'Login',

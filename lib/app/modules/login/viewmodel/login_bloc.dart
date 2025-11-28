@@ -1,13 +1,39 @@
+import 'package:auth_repository/auth_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:evehicle/app/utils/extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(LoginInitial()) {
+  LoginBloc({required AuthRepository authRepository})
+    : _authRepository = authRepository,
+      super(LoginInitial()) {
     on<SecurePasswordEvent>((event, emit) => obsecurePassword(emit));
+    on<LoginUserEvent>(loginWithEmail);
+  }
+
+  final AuthRepository _authRepository;
+
+  Future<void> loginWithEmail(
+    LoginUserEvent event,
+    Emitter<LoginState> emit,
+  ) async {
+    try {
+      emit(state.copyWith(status: StatusState.loading));
+      final user = await _authRepository.login(event.email, event.password);
+      if (user.isEmpty) {
+        throw Exception('Login failed');
+      }
+      SharedPreferences.getInstance().then((prefs) {
+        prefs.setString('token', user);
+      });
+      emit(state.copyWith(status: StatusState.success));
+    } catch (e) {
+      emit(state.copyWith(status: StatusState.failure));
+    }
   }
 
   void obsecurePassword(Emitter<LoginState> emit) {
