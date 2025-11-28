@@ -1,7 +1,10 @@
+import 'package:evehicle/app/helpers/navigation.dart';
+import 'package:evehicle/app/helpers/shared_preference.dart';
 import 'package:evehicle/app/modules/home/viewmodel/package/package_bloc.dart';
 import 'package:evehicle/app/modules/home/viewmodel/promotions/promotions_bloc.dart';
 import 'package:evehicle/app/modules/home/viewmodel/vehicle/vehicle_bloc.dart';
 import 'package:evehicle/app/modules/home/widgets/vehicle_widget.dart';
+import 'package:evehicle/app/modules/login/login_page.dart';
 import 'package:evehicle/app/themes/solid_colors.dart';
 import 'package:evehicle/app/utils/extension.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +33,16 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              PreferenceHelper.instance.remove('token');
+              PreferenceHelper.instance.remove('rental_interest');
+              NavigatorHelper.pushRemoveUntil(context, LoginPage());
+            },
+            icon: Icon(Icons.exit_to_app_sharp),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

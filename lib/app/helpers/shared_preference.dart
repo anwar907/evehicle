@@ -19,4 +19,9 @@ class PreferenceHelper {
     final prefs = await sharedPreferences;
     return prefs.getString(key);
   }
+
+  Future<bool> remove(String key) async {
+    final prefs = await sharedPreferences;
+    return prefs.remove(key);
+  }
 }
