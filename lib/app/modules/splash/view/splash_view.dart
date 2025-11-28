@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
           bloc: SplashCubit()..checkLogin(),
           listener: (context, state) {
             if (state.isLogin == false) {
-              NavigatorHelper.pushRemoveUntil(context, const LoginPage());
+              NavigatorHelper.pushRemoveUntil(context, LoginPage());
             } else {
               NavigatorHelper.pushRemoveUntil(context, const NavigationView());
             }

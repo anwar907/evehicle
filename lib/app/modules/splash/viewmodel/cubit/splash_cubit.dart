@@ -13,6 +13,6 @@ class SplashCubit extends Cubit<SplashState> {
     // Simulasi pengecekan login (ganti dengan logic sesungguhnya)
     // bool isLoggedIn = false; // Ganti dengan pengecekan token/session
 
-    emit(state.copyWith(isLogin: true));
+    emit(state.copyWith(isLogin: false));
   }
 }
