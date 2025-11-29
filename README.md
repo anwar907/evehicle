@@ -153,6 +153,7 @@ The architecture promotes separation of concerns, testability, and scalability. 
 
    - Implement full Supabase authentication flow
    - Create real-time data sync for vehicles and bookings
+   - Provide data stations batry charging
 
 2. **Testing**
 
@@ -163,6 +164,7 @@ The architecture promotes separation of concerns, testability, and scalability. 
 3. **Enhanced Features**
    - Payment integration for rental bookings
    - Real-time vehicle availability maps tracking
+   - Show electric station batry charging availability on maps
 
 ### Medium Priority:
 
