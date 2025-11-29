@@ -4,6 +4,11 @@ A Flutter application for exploring and renting electric bikes with a clean, mod
 
 ## Example Video
 
+
+
+https://github.com/user-attachments/assets/6bc617dd-9ea9-4e15-9926-b16863fee73f
+
+
 ## 1. How to Run
 
 ### Prerequisites
