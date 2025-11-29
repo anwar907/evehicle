@@ -20,15 +20,15 @@ class OnboardingWidget extends StatelessWidget {
       itemCount: pages.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const .all(40),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: .center,
             children: [
               Container(
-                padding: const EdgeInsets.all(32),
+                padding: const .all(32),
                 decoration: BoxDecoration(
                   color: context.teal700,
-                  shape: BoxShape.circle,
+                  shape: .circle,
                 ),
                 child: Icon(
                   pages[index].icon,
@@ -41,16 +41,16 @@ class OnboardingWidget extends StatelessWidget {
                 pages[index].title,
                 style: TextStyle(
                   fontSize: 28,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: .bold,
                   color: context.black,
                 ),
-                textAlign: TextAlign.center,
+                textAlign: .center,
               ),
               const SizedBox(height: 16),
               Text(
                 pages[index].description,
                 style: TextStyle(fontSize: 16, color: context.black400),
-                textAlign: TextAlign.center,
+                textAlign: .center,
               ),
             ],
           ),

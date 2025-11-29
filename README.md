@@ -2,6 +2,8 @@
 
 A Flutter application for exploring and renting electric bikes with a clean, modern UI and robust architecture.
 
+## Example Video
+
 ## 1. How to Run
 
 ### Prerequisites
@@ -216,12 +218,10 @@ The architecture promotes separation of concerns, testability, and scalability. 
 4. **Code Refactoring**
 
    - Converted StatefulWidget to StatelessWidget with BLoC
-   - Created reusable widgets and components
 
 5. **Documentation**
    - Generated mock JSON data for vehicles and packages
    - Created this comprehensive README
-   - Added inline code comments where necessary
 
 ---
 
@@ -258,7 +258,3 @@ evehicle/
 - **carousel_slider**: Image carousel
 - **flutter_map**: Map integration
 - **animated_bottom_navigation_bar**: Navigation UI
-
-## License
-
-This project is for demonstration purposes.

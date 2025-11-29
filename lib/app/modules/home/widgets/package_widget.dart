@@ -8,31 +8,31 @@ class PackageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const .symmetric(vertical: 16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: [
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: .symmetric(horizontal: 20),
             child: Text(
               'Rental Packages',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(fontWeight: .bold, fontSize: 20),
             ),
           ),
           const SizedBox(height: 12),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const .symmetric(horizontal: 20),
             itemCount: packages?.length ?? 0,
             itemBuilder: (context, index) {
               final package = packages?[index];
               return Container(
-                margin: const EdgeInsets.only(bottom: 16),
-                padding: const EdgeInsets.all(20),
+                margin: const .only(bottom: 16),
+                padding: const .all(20),
                 decoration: BoxDecoration(
                   color: context.white,
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: .circular(16),
                   border: Border.all(color: context.teal300, width: 2),
                   boxShadow: [
                     BoxShadow(
@@ -43,34 +43,34 @@ class PackageWidget extends StatelessWidget {
                   ],
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: .start,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: .spaceBetween,
                       children: [
                         Text(
                           package?.plan ?? '',
                           style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: .bold,
                             color: context.teal300,
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(
+                          padding: const .symmetric(
                             horizontal: 12,
                             vertical: 6,
                           ),
                           decoration: BoxDecoration(
                             color: context.green300,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: .circular(20),
                           ),
                           child: Text(
                             'Popular',
                             style: TextStyle(
                               color: context.white900,
                               fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: .bold,
                             ),
                           ),
                         ),
@@ -78,7 +78,7 @@ class PackageWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: .spaceAround,
                       children: [
                         _buildPriceCard(
                           context,
@@ -99,10 +99,10 @@ class PackageWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const .all(12),
                       decoration: BoxDecoration(
                         color: context.white700,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: .circular(8),
                       ),
                       child: Row(
                         children: [
@@ -142,11 +142,7 @@ Widget _buildPriceCard(BuildContext context, String period, String price) {
       const SizedBox(height: 4),
       Text(
         price,
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: context.black,
-        ),
+        style: TextStyle(fontSize: 16, fontWeight: .bold, color: context.black),
       ),
     ],
   );

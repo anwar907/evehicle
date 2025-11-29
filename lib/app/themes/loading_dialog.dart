@@ -14,10 +14,10 @@ class LoadingDialog extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
         child: Center(
           child: Container(
-            padding: const EdgeInsets.all(16),
+            padding: const .all(16),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: .circular(8),
             ),
             child: const CircularProgressIndicator(),
           ),

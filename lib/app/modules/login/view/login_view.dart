@@ -1,5 +1,7 @@
-import 'package:evehicle/app/app_routes.dart';
+import 'package:evehicle/app/helpers/navigation.dart';
 import 'package:evehicle/app/modules/login/viewmodel/login_bloc.dart';
+import 'package:evehicle/app/modules/navigation/view/navigation_view.dart';
+import 'package:evehicle/app/modules/register/register_page.dart';
 import 'package:evehicle/app/themes/solid_colors.dart';
 import 'package:evehicle/app/utils/extension.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +84,10 @@ class LoginView extends StatelessWidget {
 
                     if (state.status.isSuccess) {
                       context.showLoadingDialog();
-                      Navigator.pushNamed(context, AppRoutes.home);
+                      NavigatorHelper.pushRemoveUntil(
+                        context,
+                        NavigationView(),
+                      );
                     }
 
                     if (state.status.isFailure) {
@@ -122,7 +127,7 @@ class LoginView extends StatelessWidget {
                   heightFactor: 5,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.register);
+                      NavigatorHelper.push(context, RegisterPage());
                     },
                     child: Text(
                       'Register Here',

@@ -11,9 +11,9 @@ class ErrorPage extends StatelessWidget {
       backgroundColor: context.white900,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const .all(24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: .center,
             children: [
               Icon(Icons.error_outline, size: 120, color: context.black400),
               const SizedBox(height: 32),
@@ -21,7 +21,7 @@ class ErrorPage extends StatelessWidget {
                 'Oops!',
                 style: TextStyle(
                   fontSize: 32,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: .bold,
                   color: context.black,
                 ),
               ),
@@ -29,13 +29,13 @@ class ErrorPage extends StatelessWidget {
               Text(
                 'Something went wrong',
                 style: TextStyle(fontSize: 18, color: context.black400),
-                textAlign: TextAlign.center,
+                textAlign: .center,
               ),
               const SizedBox(height: 8),
               Text(
                 'Please try again',
                 style: TextStyle(fontSize: 14, color: context.black400),
-                textAlign: TextAlign.center,
+                textAlign: .center,
               ),
               const SizedBox(height: 48),
               SizedBox(
@@ -52,14 +52,12 @@ class ErrorPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: context.teal300,
                     foregroundColor: context.white900,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    padding: const .symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(borderRadius: .circular(12)),
                   ),
                   child: const Text(
                     'Refresh',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: .bold),
                   ),
                 ),
               ),

@@ -22,11 +22,11 @@ class HomeView extends StatelessWidget {
       backgroundColor: context.white900,
       appBar: AppBar(
         title: ListTile(
-          contentPadding: EdgeInsets.zero,
+          contentPadding: .zero,
           title: const Text('Hello'),
           subtitle: Text('Dustin Styles'),
           leading: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const .all(8.0),
             child: CircleAvatar(
               radius: 20,
               backgroundImage: AssetImage('assets/img/moto1.png'),

@@ -154,10 +154,7 @@ class VehicleDetails extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: context.teal700,
                               borderRadius: .circular(20),
-                              border: Border.all(
-                                color: context.teal300,
-                                width: 1,
-                              ),
+                              border: .all(color: context.teal300, width: 1),
                             ),
                             child: Text(
                               feature,
@@ -212,7 +209,7 @@ class VehicleDetails extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.white,
         borderRadius: .circular(12),
-        border: Border.all(color: context.black500, width: 1),
+        border: .all(color: context.black500, width: 1),
       ),
       child: Column(
         children: [
@@ -223,7 +220,7 @@ class VehicleDetails extends StatelessWidget {
           Text(
             value,
             style: const TextStyle(fontSize: 16, fontWeight: .bold),
-            textAlign: TextAlign.center,
+            textAlign: .center,
           ),
         ],
       ),

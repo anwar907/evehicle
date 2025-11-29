@@ -44,10 +44,7 @@ class SplashScreen extends StatelessWidget {
             if (state.status.isSuccess) {
               context.dismissDialog();
               if (state.isLogin == true) {
-                NavigatorHelper.pushRemoveUntil(
-                  context,
-                  const NavigationView(),
-                );
+                NavigatorHelper.pushRemoveUntil(context, NavigationView());
               } else {
                 NavigatorHelper.pushRemoveUntil(context, LoginPage());
               }
@@ -66,24 +63,22 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Expanded(child: OnboardingWidget(pages: _pages)),
                     Padding(
-                      padding: const EdgeInsets.all(20),
+                      padding: const .all(20),
                       child: Column(
                         children: [
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: .center,
                             children: List.generate(
                               _pages.length,
                               (index) => Container(
-                                margin: const EdgeInsets.symmetric(
-                                  horizontal: 4,
-                                ),
+                                margin: const .symmetric(horizontal: 4),
                                 width: currentPage == index ? 24 : 8,
                                 height: 8,
                                 decoration: BoxDecoration(
                                   color: currentPage == index
                                       ? context.teal300
                                       : context.black400,
-                                  borderRadius: BorderRadius.circular(4),
+                                  borderRadius: .circular(4),
                                 ),
                               ),
                             ),
@@ -98,11 +93,9 @@ class SplashScreen extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: context.teal300,
                                 foregroundColor: context.white900,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 16,
-                                ),
+                                padding: const .symmetric(vertical: 16),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: .circular(12),
                                 ),
                               ),
                               child: Text(
@@ -111,7 +104,7 @@ class SplashScreen extends StatelessWidget {
                                     : 'Next',
                                 style: const TextStyle(
                                   fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: .bold,
                                 ),
                               ),
                             ),

@@ -12,20 +12,20 @@ class StickyBanner extends StatelessWidget {
     return SizedBox(
       height: 120,
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        scrollDirection: Axis.horizontal,
+        padding: const .symmetric(horizontal: 16, vertical: 8),
+        scrollDirection: .horizontal,
         itemCount: promotions?.length ?? 0,
         itemBuilder: (context, index) {
           final promo = promotions?[index];
           return Container(
             width: 280,
-            margin: const EdgeInsets.only(right: 12),
-            padding: const EdgeInsets.all(16),
+            margin: const .only(right: 12),
+            padding: const .all(16),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [context.teal300, context.teal500],
               ),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: .circular(12),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(),
@@ -35,25 +35,25 @@ class StickyBanner extends StatelessWidget {
               ],
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: .start,
+              mainAxisAlignment: .spaceBetween,
               children: [
                 Text(
                   promo?.title ?? '',
                   style: TextStyle(
                     color: context.white900,
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: .bold,
                   ),
                 ),
                 Text(
                   promo?.shortCopy ?? '',
                   style: TextStyle(color: context.white800, fontSize: 12),
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  overflow: .ellipsis,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: .spaceBetween,
                   children: [
                     Text(
                       'Valid until: ${promo?.validity}',

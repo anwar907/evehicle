@@ -25,7 +25,7 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: const EdgeInsets.all(12.0),
+        minimum: const .all(12.0),
         child: Form(
           key: _formKey,
           autovalidateMode: .onUserInteraction,

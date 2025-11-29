@@ -35,23 +35,23 @@ class VehicleWidget extends StatelessWidget {
                         width: double.infinity,
                         height: 400,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: .circular(12),
                           color: context.teal,
                           image: DecorationImage(
                             image: AssetImage(e.photo),
-                            fit: BoxFit.cover,
+                            fit: .cover,
                           ),
                         ),
                         child: Align(
-                          alignment: Alignment.topCenter,
+                          alignment: .topCenter,
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const .all(16.0),
                             child: Text(
                               e.model,
                               style: TextStyle(
                                 color: context.white900,
                                 fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: .bold,
                               ),
                             ),
                           ),
@@ -74,7 +74,7 @@ class VehicleWidget extends StatelessWidget {
               onPageChanged: (index, reason) {
                 context.read<VehicleBloc>().add(ChangeVehicleIndexEvent(index));
               },
-              scrollDirection: Axis.horizontal,
+              scrollDirection: .horizontal,
             ),
           ),
         ),
@@ -82,18 +82,15 @@ class VehicleWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: .start,
               children: [
                 Text(
                   currentVehicle.model,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: const TextStyle(fontSize: 18, fontWeight: .bold),
                 ),
                 const SizedBox(height: 8),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: .spaceEvenly,
                   children: [
                     Flexible(
                       flex: 1,
@@ -101,19 +98,17 @@ class VehicleWidget extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: context.white,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: context.black500, width: 1),
+                          borderRadius: .circular(12),
+                          border: .all(color: context.black500, width: 1),
                         ),
-                        padding: const EdgeInsets.all(16),
+                        padding: const .all(16),
                         child: Column(
                           children: [
                             Icon(Icons.speed, color: context.teal300),
                             const SizedBox(height: 4),
                             Text(
                               currentVehicle.maxSpeed,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: const TextStyle(fontWeight: .bold),
                             ),
                             const Text(
                               'Max Speed',
@@ -130,10 +125,10 @@ class VehicleWidget extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: context.white,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: context.black500, width: 1),
+                          borderRadius: .circular(12),
+                          border: .all(color: context.black500, width: 1),
                         ),
-                        padding: const EdgeInsets.all(16),
+                        padding: const .all(16),
                         child: Column(
                           children: [
                             Icon(
@@ -143,9 +138,7 @@ class VehicleWidget extends StatelessWidget {
                             const SizedBox(height: 4),
                             Text(
                               currentVehicle.range,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: const TextStyle(fontWeight: .bold),
                             ),
                             const Text('Range', style: TextStyle(fontSize: 10)),
                           ],
